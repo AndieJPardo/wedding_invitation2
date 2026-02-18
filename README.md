@@ -1,1 +1,1 @@
-# wedding_invitation2
+# wedding_invitation

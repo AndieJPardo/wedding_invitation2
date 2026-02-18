@@ -1,0 +1,203 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #f8f6f1;
+    color: #1e2b22;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* =========================
+   TIPOGRAFÍA
+========================= */
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+section {
+    padding: 100px 10%;
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    background-image: url("hero.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+/* =========================
+   CUENTA REGRESIVA
+========================= */
+.countdown {
+    background-color: #e9e4da;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+/* =========================
+   FORMULARIO RSVP
+========================= */
+form {
+    margin-top: 30px;
+}
+
+input,
+select {
+    padding: 12px;
+    margin: 10px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    width: 250px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+}
+
+button {
+    padding: 12px 30px;
+    border: none;
+    background-color: #1e2b22;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #c6a75e;
+    color: #000;
+}
+
+/* =========================
+   GALERÍA
+========================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+   MAPA
+========================= */
+iframe {
+    border-radius: 20px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+/* =========================
+   FAQ
+========================= */
+.faq p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* =========================
+   REGALOS
+========================= */
+.gifts {
+    background-color: #f1ede6;
+}
+
+/* =========================
+   PARTÍCULAS HADAS
+========================= */
+#tsparticles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .names {
+        font-size: 3rem;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    input,
+    select {
+        width: 100%;
+    }
+
+    .grid img {
+        height: 220px;
+    }
+}

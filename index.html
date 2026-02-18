@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea & Mateo</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <style>
+        /* =========================
+        MAIN COLORS
+        ========================= */
+        :root {
+            --verde-profundo: #1c2d24;
+            --verde-suave: #2f4f3f;
+            --dorado: #c6a75e;
+            --dorado-suave: #e6d3a3;
+            --fondo: #f6f4ef;
+        }
+
+        /* =========================
+        RESET
+        ========================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: var(--fondo);
+            color: var(--verde-profundo);
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+        TYPOGRAPHY
+        ========================= */
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5.5rem;
+            letter-spacing: 3px;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(198, 167, 94, 0.6);
+        }
+
+        h2 {
+            font-weight: 400;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            color: var(--verde-suave);
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            width: 60px;
+            height: 2px;
+            background: var(--dorado);
+            display: block;
+            margin: 15px auto 0;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        section {
+            padding: 120px 10%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero {
+            background-image: url("hero2.jpeg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(28, 45, 36, 0.6), rgba(0, 0, 0, 0.4));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeUp 2s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        button {
+            padding: 14px 35px;
+            border: 1px solid var(--dorado);
+            background: transparent;
+            color: white;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.4s;
+            backdrop-filter: blur(5px);
+        }
+
+        button:hover {
+            background: var(--dorado);
+            color: black;
+        }
+
+        .countdown {
+            background: linear-gradient(180deg, #f6f4ef, #ece7dc);
+            font-size: 1.8rem;
+            color: var(--verde-profundo);
+        }
+
+        input,
+        select {
+            padding: 14px;
+            margin: 10px;
+            border-radius: 40px;
+            border: 1px solid var(--dorado);
+            width: 260px;
+            background: white;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--verde-suave);
+            box-shadow: 0 0 10px rgba(198, 167, 94, 0.4);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .grid img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 25px;
+            transition: 0.6s;
+        }
+
+        .grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-item {
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            background: #0d3c2c;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: none;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 5px;
+            padding: 10px 15px;
+            background: #fff7e6;
+            border-left: 4px solid white;
+            border-radius: 0 10px 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .names {
+                font-size: 3.5rem;
+            }
+
+            section {
+                padding: 80px 25px;
+            }
+
+            input,
+            select {
+                width: 100%;
+            }
+
+            .grid img {
+                height: 250px;
+            }
+
+            h2 {
+                letter-spacing: 3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tsparticles"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="names">Andrea & Mateo</h1>
+            <p>November 21, 2026</p>
+            <button id="musicButton">✨ Play Music</button>
+        </div>
+    </section>
+
+    <section class="countdown" data-aos="fade-up">
+        <h2>Countdown</h2>
+        <div id="timer"></div>
+    </section>
+
+    <section data-aos="fade-up">
+        <h2>Details</h2>
+        <p><strong>Date:</strong> November 21, 2026</p>
+        <p><strong>Time:</strong> 3:00 PM</p>
+        <p><strong>Venue:</strong> Casa Aragon, KM 16 Medellín Highway, El Rosal, Cundinamarca</p>
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.659652861119!2d-74.23408049999999!3d4.8283726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f7f7667ec9a47%3A0x2f7302c96af718a9!2sCASA%20ARAG%C3%93N!5e0!3m2!1ses!2sco!4v1771205839213!5m2!1ses!2sco"
+            width="100%" height="300" style="border:0;" loading="lazy"></iframe>
+    </section>
+
+    <section data-aos="fade-up">
+        <h2>Our Story</h2>
+        <p>
+            <strong>It all started in 2017…</strong> As friends, we realized we wanted something more
+            when we couldn’t stop talking to each other. ❤️<br><br>
+            In those early days, we had dinner together every night and watched movies. Andrea taught me about
+            cinema, and Mate opened up the world of video games to me. Between laughter and screen marathons, our bond
+            grew without us even noticing.<br><br>
+            Our first trip to Europe was unforgettable: Greece, a beach, a sunset and… Mateo extremely nervous.
+            Between laughter and while recording a video, we said “yes” and this new chapter of our
+            life began.<br><br>
+            At home we share our little adorable chaos: Yuki, Tora and Max, who make every day special.
+            Together we have built a home full of laughter, play and complicity, traveling, discovering new places and
+            enjoying every moment.<br><br>
+            Now we want to celebrate this rite of passage surrounded by those who mean so much to us. We would
+            love for you to be part of this new adventure: our marriage!
+        </p>
+
+        <div class="grid">
+            <img src="foto1.jpg">
+            <img src="foto2.jpeg">
+            <img src="foto3.jpeg">
+            <img src="foto5.jpeg">
+            <img src="foto8.jpeg">
+            <img src="foto10.jpg">
+        </div>
+    </section>
+
+    <section data-aos="fade-up">
+        <h2>Confirm Your Attendance</h2>
+        <form action="https://formsubmit.co/andiejpardo@gmail.com" method="POST">
+            <input type="text" name="Nombre" placeholder="Full Name" required>
+            <input type="text" name="Restriccion alimenticia" placeholder="Dietary restriction (optional)">
+            <select name="Asistencia">
+                <option value="Sí">I will attend</option>
+                <option value="No">I won’t be able to attend</option>
+            </select>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+            <br>
+            <button type="submit">Confirm</button>
+        </form>
+    </section>
+
+    <section data-aos="fade-up">
+        <h2>Gifts</h2>
+        <p>✨ Your presence is the greatest gift ✨</p>
+        <p>If you would like to give us a gift, we would love your help as we begin our new life together:</p>
+        <p>We will have a card box available</p>
+    </section>
+
+    <section data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <button class="faq-question">Dress code?</button>
+            <div class="faq-answer">We would love to see you elegant and ready to celebrate, so come in your best
+                formal look. Just a small note: no white, champagne, or tones that may look white… that honor
+                belongs only to Andrea! 💖</div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Can I arrive by car?</button>
+            <div class="faq-answer">Yes, there will be parking available. Just remember there is a toll on the way.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Can I bring children?</button>
+            <div class="faq-answer">No, please. This adventure is adults only, so everyone can enjoy without
+                distractions!</div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Can I bring a surprise guest?</button>
+            <div class="faq-answer">No, only those who received an invitation. We want everyone present
+                to be part of our story. 💖</div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Will transportation be available?</button>
+            <div class="faq-answer">Yes, if you don’t have transportation to arrive or return, we will arrange it.
+                Meeting point: details coming soon.</div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">What time should I arrive?</button>
+            <div class="faq-answer">Punctuality above all. The ceremony will start on time, and if you arrive late…
+                you will miss special moments.</div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">What is the RSVP deadline?</button>
+            <div class="faq-answer">July 1st. Mark that date and confirm your attendance so everything can be perfect.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Who do I contact if I have questions?</button>
+            <div class="faq-answer">Write to us via email or WhatsApp. We’re happy to help with any questions. 💌</div>
+        </div>
+    </section>
+
+    <audio id="music" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        AOS.init({ duration: 1200, once: true });
+
+        const music = document.getElementById('music');
+        const musicBtn = document.getElementById('musicButton');
+        musicBtn.addEventListener('click', () => {
+            if (music.paused) music.play();
+            else music.pause();
+        });
+
+        const weddingDate = new Date("Nov 21, 2026 15:00:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("timer").innerHTML =
+                days + " days " + hours + " hours " + minutes + " minutes";
+        }, 1000);
+
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        tsParticles.load("tsparticles", {
+            particles: {
+                number: { value: 50 },
+                color: { value: ["#ffffff", "#c6a75e"] },
+                size: { value: 3 },
+                move: { enable: true, speed: 0.6 },
+                opacity: { value: 0.6 },
+            }
+        });
+    </script>
+</body>
+
+</html>
