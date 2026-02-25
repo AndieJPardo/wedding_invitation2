@@ -288,15 +288,18 @@
 
     <section data-aos="fade-up">
         <h2>Confirm Your Attendance</h2>
-        <form action="https://formsubmit.co/andiejpardo@gmail.com" method="POST">
+        <form id="rsvpForm">
             <input type="text" name="Nombre" placeholder="Full Name" required>
             <input type="text" name="Restriccion alimenticia" placeholder="Dietary restriction (optional)">
+
             <select name="Attendance">
                 <option value="Sí">I will attend</option>
                 <option value="No">I won’t be able to attend</option>
             </select>
 
             <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Wedding RSVP">
+            <input type="hidden" name="_template" value="table">
 
             <br>
             <button type="submit">Confirmar</button>
